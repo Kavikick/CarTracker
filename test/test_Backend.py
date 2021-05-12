@@ -1,14 +1,24 @@
-def test_uppercase():
-    assert "loud noises".upper() == "LOUD NOISES"
+from Backend import *
+from datetime import timedelta
 
 
-def test_reversed():
-    assert list(reversed([1, 2, 3, 4])) == [4, 3, 2, 1]
+def test_Car():
+    # init
+    testCar = Car(1)
+    assert testCar.number == 1
+    assert testCar.lapsCompleted == 0
+    assert testCar.time == timedelta()
 
+    # Update
+    time1 = timedelta(minutes=1, seconds=20)
+    testCar.update(time1)
+    assert testCar.lapsCompleted == 1
+    assert testCar.time == time1
+    assert testCar.laptimes[0] == time1
 
-def test_some_primes():
-    assert 37 in {
-        num
-        for num in range(1, 50)
-        if num != 1 and not any([num % div == 0 for div in range(2, num)])
-    }
+    time2 = timedelta(minutes=2, seconds=30)
+    difference = time2-time1
+    testCar.update(time2)
+    assert testCar.lapsCompleted == 2
+    assert testCar.time == time2
+    assert testCar.laptimes[1] == difference
