@@ -1,0 +1,5 @@
+/*
+    LinkedList.h
+
+    A Generic doubly linked list
+*/
