@@ -5,6 +5,7 @@
     
     It serves to keep track of the order of cars in a race
 */
+#include "Car.h"
 
 class Tracker {
 public:
