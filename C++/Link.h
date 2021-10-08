@@ -6,11 +6,12 @@
 
 class Link {
 public:
-    Link* getNext();
-    Link* getPrevious();
-    void setNext(Link* next);
-    void setPrevious(Link* previous);
+  Link *getNext();
+  Link *getPrevious();
+  void setNext(Link *next);
+  void setPrevious(Link *previous);
+
 private:
-    Link* next = nullptr;
-    Link* previous = nullptr;
+  Link *next = nullptr;
+  Link *previous = nullptr;
 };
